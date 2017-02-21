@@ -1,0 +1,44 @@
+{
+  "name": "alloyblog",
+  "version": "1.0.0",
+  "description": "blog build with koa2",
+  "main": "app.js",
+  "scripts": {
+    "start": "babel-node ./bin/run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Caesor/AlloyBlog.git"
+  },
+  "keywords": [
+    "koa2",
+    "blog"
+  ],
+  "author": "nemo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Caesor/AlloyBlog/issues"
+  },
+  "homepage": "https://github.com/Caesor/AlloyBlog#readme",
+  "dependencies": {
+    "koa": "^2.0.0-alpha.8",
+    "koa-bodyparser": "^3.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-convert": "^1.2.0",
+    "koa-cors": "0.0.16",
+    "koa-favicon": "^2.0.0",
+    "koa-logger": "^1.3.1",
+    "koa-router": "^7.0.1",
+    "koa-session2": "^1.0.8",
+    "koa-static": "^2.1.0",
+    "koa-views": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
+    "chokidar": "^1.6.1",
+    "webpack": "^2.2.1"
+  }
+}
