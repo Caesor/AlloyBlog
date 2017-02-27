@@ -1,4 +1,5 @@
 const config = {
+    port: 3000,
     favicon: __dirname + '/public/favicon.ico',
     compress: {
         threshold: 2048,

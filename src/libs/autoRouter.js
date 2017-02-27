@@ -6,12 +6,8 @@ export default class autoRouter extends Router{
     }
 
     set(pathname, controller) {
-        // this
-        //     .get(pathname, controller.get)
-        //     .post(pathname.replace(/\/:\w+\/?$/g, ''), controller.post)
-        //     .del(pathname, controller.del)
-        //     .patch(pathname, controller.patch)
-        ['get', 'post', 'del', 'patch'].forEach( method => {
+
+        ['get', 'post', 'del', 'patch', 'put'].forEach( method => {
             if(controller[method]){
                 if(method === 'post'){
                     this[method](pathname.replace(/\/:\w+\/?$/g, ''), controller[method])
