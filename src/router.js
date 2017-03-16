@@ -10,7 +10,7 @@ import autoRouter from './libs/autoRouter'
 const router = new autoRouter();
 
 router
-    .get('/', main.get)
+    .get('/', [],main.get)
     .set('/login', login)
     .set('/signup', signup)
     .get('/logout', logout.get)

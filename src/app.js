@@ -9,14 +9,16 @@ import views from 'koa-views'
 import convert from 'koa-convert'
 import serve from 'koa-static'
 import cors from 'koa-cors'
+import onerror from 'koa-onerror'
 import finalHandler from './middlewares/finalHandler'
-// import router from './router'
 
 import config from './config'
 
 const app = new Koa();
 
-app.keys = ['some secret hurr'];
+onerror(app);
+
+app.keys = ['alloy team'];
 
 app
     .use(finalHandler())

@@ -1,18 +1,17 @@
-var path = require('path')
-var fs = require('fs')
-var debug = require('debug')('dev')
-var chokidar = require('chokidar')
-var babelCliDir = require('babel-cli/lib/babel/dir')
-var babelCliFile = require('babel-cli/lib/babel/file')
+import path from 'path'
+import fs from 'fs'
+import debug from 'debug'
+import chokidar from 'chokidar'
+import babelCliDir from 'babel-cli/lib/babel/dir'
+import babelCliFile from 'babel-cli/lib/babel/file'
+import colors from 'colors'
 
-var projectRootPath = path.resolve(__dirname, '..')
-var srcPath = path.join(projectRootPath, 'src')
-var appPath = path.join(projectRootPath, 'app')
-
-require('colors')
-var log = console.log.bind(console, '>>> [DEV]:'.red)
-
-var watcher = chokidar.watch(path.join(__dirname, '../src'))
+const projectRootPath = path.resolve(__dirname, '..'),
+    srcPath = path.join(projectRootPath, 'src'),
+    appPath = path.join(projectRootPath, 'app'),
+    devDebug = debug('dev'),
+    log = console.log.bind(console, '>>> [DEV]:'.red),
+    watcher = chokidar.watch(path.join(__dirname, '../src'))
 
 watcher.on('ready', function () {
     log('Compiling...'.green)
@@ -39,7 +38,7 @@ watcher.on('ready', function () {
                 fs.unlinkSync(rmfile)
                 fs.unlinkSync(rmfile + '.map')
             } catch (e) {
-                debug('fail to unlink', rmfile)
+                devDebug('fail to unlink', rmfile)
                 return
             }
             console.log('Deleted', rmfileRelative)
@@ -49,8 +48,9 @@ watcher.on('ready', function () {
 
 
 function compileFile (srcDir, outDir, filename, cb) {
-    var outFile = path.join(outDir, filename)
-    var srcFile = path.join(srcDir, filename)
+    const outFile = path.join(outDir, filename),
+        srcFile = path.join(srcDir, filename);
+        
     try {
         babelCliFile({
             outFile: outFile,
