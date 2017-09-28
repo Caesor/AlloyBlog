@@ -30,10 +30,10 @@ app
     .use(cors())
     .use(serve(__dirname + '/public'))
     .use(async (ctx, next) => {
-        await require('./middlewares/serverRender.js')(ctx, next)
+        await require('./router').routes()(ctx, next)
     })
     .use(async (ctx, next) => {
-        await require('./router').routes()(ctx, next)
+        await require('./middlewares/serverRender.js')(ctx, next)
     })
 
 app
