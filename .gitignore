@@ -3,3 +3,4 @@ node_modules
 npm-debug.log
 src/public/blog
 app
+.vscode/

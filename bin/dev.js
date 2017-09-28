@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import fsExtra from 'fs-extra'
 import debug from 'debug'
 import chokidar from 'chokidar'
 import babelCliDir from 'babel-cli/lib/babel/dir'
@@ -11,7 +12,11 @@ const projectRootPath = path.resolve(__dirname, '..'),
     appPath = path.join(projectRootPath, 'app'),
     devDebug = debug('dev'),
     log = console.log.bind(console, '>>> [DEV]:'.red),
-    watcher = chokidar.watch(path.join(__dirname, '../src'))
+    watcher = chokidar.watch(path.join(__dirname, '../src'));
+
+fsExtra.copy(path.resolve(srcPath, './public'), path.resolve(appPath, './public'))
+    .then(() => console.log('public folder copy success!'))
+    .catch(err => console.error(err));
 
 watcher.on('ready', function () {
     log('Compiling...'.green)

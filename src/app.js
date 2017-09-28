@@ -1,14 +1,12 @@
 import Koa from 'koa'
-import http from 'http'
 import bodyParser from 'koa-bodyparser'
 import logger from 'koa-logger'
-import session from 'koa-session2'
+import session from 'koa-session'
 import compress from 'koa-compress'
 import favicon from 'koa-favicon'
-import views from 'koa-views'
-import convert from 'koa-convert'
+// import views from 'koa-views'
 import serve from 'koa-static'
-import cors from 'koa-cors'
+import cors from 'kcors'
 import onerror from 'koa-onerror'
 import finalHandler from './middlewares/finalHandler'
 
@@ -22,18 +20,18 @@ app.keys = ['alloy team'];
 
 app
     .use(finalHandler())
-    .use(bodyParser())
+    .use(bodyParser({
+        strict: true
+    }))
     .use(logger())
     .use(compress(config.compress))
     .use(favicon(config.favicon))
-    .use(views(`${__dirname}/views`, {
-        map: {
-            html: 'nunjucks'
-        }
-    }))
-    .use(convert(session(app)))
-    .use(convert(cors()))
+    .use(session(config.session, app))
+    .use(cors())
     .use(serve(__dirname + '/public'))
+    .use(async (ctx, next) => {
+        await require('./middlewares/serverRender.js')(ctx, next)
+    })
     .use(async (ctx, next) => {
         await require('./router').routes()(ctx, next)
     })
