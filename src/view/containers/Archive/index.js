@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
+import { connect } from 'react-redux'
 import { Link } from 'react-router'
 
 if(typeof window !== 'undefined'){
     // require('./index.scss')
 }
 
-export default class Archive extends Component {
+class Archive extends Component {
     constructor() {
         super();
         this.state = {
@@ -46,3 +47,5 @@ export default class Archive extends Component {
             }); 
     }
 }
+
+export default connect(Archive);

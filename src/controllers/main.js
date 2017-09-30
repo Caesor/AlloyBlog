@@ -19,7 +19,7 @@ console.log(filepath);
                 name: result[2]
             }
         })
-    console.log(list);
+    // console.log(list);
 //     let list = files.map( file => {
 //         let i = file.content.match(infoReg),
 //             info = i && i[1],
@@ -38,6 +38,9 @@ console.log(filepath);
 //     }).reverse();
 
     ctx.body = {
-         retcode: 3
+         retcode: 0,
+         result: {
+             list
+         }
     }
 }
