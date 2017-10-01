@@ -1,32 +1,24 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import { connect } from 'react-redux'
-import { Link } from 'react-router'
-
-if(typeof window !== 'undefined'){
-    // require('./index.scss')
-}
 
 class Archive extends Component {
     constructor() {
         super();
-        this.state = {
-            data: []
-        }
     }
 
     render() {
-        const { data } = this.state;
+        const { archive } = this.props;
 
         return (
             <div>
                 <h1>Archive</h1>
                 <ul className="bloglist">
                 {
-                    data.map( (item, index) => {
+                    archive.map( (item, index) => {
                         return (
                             <li className="bloglist-item" key={index}>
-                                <Link to={item.href}><span className="bloglist-item-title">{item.title}</span><span className="bloglist-item-time">{item.time}</span></Link>
+                                <span className="bloglist-item-title">{item.title}</span><span className="bloglist-item-time">{item.time}</span>
                             </li>
                         )
                     })
@@ -48,4 +40,8 @@ class Archive extends Component {
     }
 }
 
-export default connect(Archive);
+export default connect( state => {
+    return {
+        archive: state.archive
+    }
+})(Archive);

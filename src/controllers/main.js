@@ -7,7 +7,7 @@ export const get = async ctx => {
         timeReg = /(\d{4}-\d{2}-\d{2})/i,
         titleReg = /title\s*:\s*(.+)/i,
         filepath = path.resolve(__dirname, '../public/blogs');
-console.log(filepath);
+
     let files = await fs.readdir(filepath);
 
     let list = files
@@ -16,7 +16,7 @@ console.log(filepath);
             let result = file.match(/^(\d{4}-\d{2}-\d{2})-(\S+)\.md$/);
             return {
                 time: result[1],
-                name: result[2]
+                title: result[2]
             }
         })
     // console.log(list);
@@ -40,7 +40,7 @@ console.log(filepath);
     ctx.body = {
          retcode: 0,
          result: {
-             list
+             archive: list
          }
     }
 }

@@ -13,7 +13,7 @@ const serverRender = async (ctx, next) => {
     const context = {};
     const data = await getBloglist();
     
-    const store = configureStore(data);
+    const store = configureStore(data.result);
 
     ctx.body = template(
         renderToString(

@@ -1,19 +1,19 @@
 import { createStore, applyMiddleware } from 'redux'
 import { combineReducers } from 'redux'
 import thunk from 'redux-thunk'
-import { createLogger } from 'redux-logger'
-import api from './middlewares/api.js'
+import logger from 'redux-logger'
+// import api from './middlewares/api.js'
 
-import reducers from './reducers'
+import archive from './reducers/archive.js'
 
 const reducer = combineReducers({
-    ...reducers
+    archive
 })
 
 const configureStore = preloadedState => createStore(
     reducer,
     preloadedState,
-    applyMiddleware(thunk, api, createLogger)
+    applyMiddleware(thunk, logger)
 )
 
 export default configureStore;

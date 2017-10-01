@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
-import { Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
 import { Switch } from 'react-router'
 
-import Layout from './containers/Layout'
+import Header from './components/Header'
 import Archive from './containers/Archive'
 import Blog from './containers/Blog'
 import About from './containers/About'
 
-class RouteStatus extends Component {
+class Main extends Component {
     render() {
         return (
-            <Switch>
-                <Route exact path="/" component={Layout} />
-                <Route path="/about" component={About} />
-                <Route path="/blog" component={Archive} />
-                <Route path="/blog/:blogId" component={Blog} />
-            </Switch>
+            <div className="layout">
+                <Header>
+                    <h1 className="nav-log">Nemo</h1>
+                    <NavLink to="/">Archive</NavLink>
+                    <NavLink to="/about">About</NavLink>
+                </Header>
+                <Switch>
+                    <Route exact path="/" component={Archive} />
+                    <Route path="/about" component={About} />
+                    <Route path="/blog/:blogId" component={Blog} />
+                </Switch>
+            </div>
         )
     }
 }
 
-export default RouteStatus;
+export default Main;
