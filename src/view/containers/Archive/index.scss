@@ -1,0 +1,27 @@
+.archive {
+    width: 100%;
+    background: #fff;
+    padding-top: 50px;
+
+    .title, .bloglist {
+        max-width: 660px;
+        margin: 0 auto;
+    }
+
+    .title {
+        padding: 60px 40px 40px;
+    }
+    
+    .bloglist {
+        padding: 0 40px 100px;
+
+        .bloglist-item {
+            display: block;
+            text-decoration: none;
+            padding: 8px 0;
+            .bloglist-item-time {
+                float: right;
+            }
+        }
+    }
+}

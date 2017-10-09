@@ -1,0 +1,50 @@
+.blog {
+    background: #fff;
+    padding: 60px 40px;
+
+    .container {
+        max-width: 660px;
+        margin: 0 auto;
+        .blog-title {
+            font-size: 32px;
+            line-height: 1.5;
+            font-weight: 700;
+        }
+        .blog-info {
+            font-size: 14px;
+            color: rgb(128, 128, 128);
+            margin-top: 20px;
+
+            .avatar {
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background-image: url('./head.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+        }
+
+        @at-root .blog-content {
+            font-size: 16px;
+            margin-top: 40px;
+            
+            h2 {
+                font-size: 24px;
+                font-weight: 700;
+                margin: 20px 0;
+            }
+            p {
+                margin: 20px 0px;
+                line-height: 40px;
+
+                img {
+                    max-width: 460px;
+                }
+            }
+        }
+    }
+}

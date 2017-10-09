@@ -1,0 +1,18 @@
+.main {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-image: url('./9.jpg');
+    background-size: cover;
+
+    .slogon {
+        width: 420px;
+        margin-top: 54px;
+        right: 10px;
+        font-size: 60px;
+        color: #fff;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-60%);
+    }
+}
