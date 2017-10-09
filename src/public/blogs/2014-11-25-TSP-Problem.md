@@ -7,7 +7,7 @@ tags: algorithm
 ##Traveling Salesman Problem（TSP）
 首先让我们回顾一下**TSP**问题：一个商人想要以最短时间访问n个城市，每个城市只能去一次，并且最终将回到他出发的城市。
 
-![picture1]({{site.blogimgurl}}/2014-11-25-01.png "tsp")
+![picture1](http://localhost:3000/blog_img/2014-11-25-01.png "tsp")
 
 **问题空间：**X = Π { Beijing , Chengdu , Guangzhou , Hefei , Shanghai }
 

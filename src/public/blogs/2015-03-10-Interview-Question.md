@@ -650,7 +650,7 @@ XMLHttpRequest的5种状态
 JavaScript出于安全方面的考虑，不允许跨域调用其他页面的对象。但在安全限制的同时也给注入iframe或是ajax应用上带来了不少麻烦。
 
 首先什么是跨域，简单地理解就是因为JavaScript同源策略的限制，a.com 域名下的js无法操作b.com或是c.a.com域名下的对象。更详细的说明可以看下表：
-![picture1]({{site.blogimgurl}}/2015-03-10-01.png "ajax跨域")
+![picture1](http://localhost:3000/blog_img/2015-03-10-01.png "ajax跨域")
 
 **1、document.domain+iframe的设置**
 

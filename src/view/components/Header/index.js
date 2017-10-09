@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom'
+import classNames from 'classnames'
 
-const Header = ({ children }) => (
-    <div className="header">
-        <div className="nav">
-            <ul className="nav-list">
-            {
-                children.map((child, index) => (
-                    <li className="nav-list-item" key={index}>
-                    { child }
-                    </li>
-                ))
-            }
-            </ul>
-        </div>
-    </div>
-)
+if(typeof window !== 'undefined'){
+    require('./index.scss')
+}
 
-export default Header;
+class Header extends Component {
+    render() {
+        let isIndex = this.props.location.pathname === '/';
+        let c = classNames('header', {black: !isIndex });
+
+        return (
+            <div className={c}>
+                <ul className="nav">
+                {
+                    this.props.children.map((child, index) => (
+                        <li className="nav-item" key={index}>
+                        { child }
+                        </li>
+                    ))
+                }
+                </ul>
+            </div>
+        )
+    }
+}
+
+export default withRouter(Header);

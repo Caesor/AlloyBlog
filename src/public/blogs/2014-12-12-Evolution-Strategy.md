@@ -84,7 +84,7 @@ C、用于标准差 σ 的向量用作基因型每一个元素的一个值
 
 D、一个写方差矩阵 C 用于转换二进制交流的基因
 
-![picture1]({{site.blogimgurl}}/2014-12-12-01.png "stand")
+![picture1](http://localhost:3000/blog_img/2014-12-12-01.png "stand")
 
 使用 B 方法,但一直标准差作为变异步长 p.w = σ
 

@@ -16,4 +16,5 @@ const config = {
         rolling: false
     }
 }
+export const DOMAIN = 'http://localhost:3000/cgi-bin'
 export default config

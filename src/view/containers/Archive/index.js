@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
+import { Link } from 'react-router-dom' 
 import { connect } from 'react-redux'
+
+import { get_blog_list } from '../../actions/archive'
+
+if(typeof window !== 'undefined'){
+    require('./index.scss')
+}
 
 class Archive extends Component {
     constructor() {
@@ -11,14 +18,14 @@ class Archive extends Component {
         const { archive } = this.props;
 
         return (
-            <div>
-                <h1>Archive</h1>
+            <div className="archive">
+                <h1 className="title">Archive</h1>
                 <ul className="bloglist">
                 {
                     archive.map( (item, index) => {
                         return (
-                            <li className="bloglist-item" key={index}>
-                                <span className="bloglist-item-title">{item.title}</span><span className="bloglist-item-time">{item.time}</span>
+                            <li className="" key={index}>
+                                <Link className="bloglist-item" to={`/blog/${item.filename}`}><span className="bloglist-item-title">{item.title}</span><span className="bloglist-item-time">{item.time}</span></Link>
                             </li>
                         )
                     })
@@ -29,19 +36,13 @@ class Archive extends Component {
     }
 
     componentDidMount() {
-
-        fetch('/bloglist')
-            .then(response =>response.json())
-            .then(data => {
-                this.setState({
-                    data: data.list
-                });
-            }); 
+        this.props.get_blog_list();
     }
 }
 
-export default connect( state => {
-    return {
-        archive: state.archive
-    }
-})(Archive);
+export default connect( 
+    state => ({
+        archive: state.archive || []
+    }),
+    { get_blog_list }
+)(Archive);

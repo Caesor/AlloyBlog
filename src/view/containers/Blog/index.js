@@ -1,38 +1,50 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import showdown from 'showdown'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+
+import { get_blog_content } from '../../actions/blog'
 
 if(typeof window !== 'undefined'){
-    // require('./index.scss')
+    require('./index.scss')
 }
 
 const converter = new showdown.Converter();
 
-export default class Blog extends Component {
+class Blog extends Component {
     constructor() {
         super();
-        this.state = {
-            content: ''
-        }
     }
 
     render() {
-        let rawHtml = converter.makeHtml(this.state.content.toString());
+        const { blog } = this.props;
+        let rawHtml = converter.makeHtml(blog.content.toString());
         return (
-            <div className="blog" dangerouslySetInnerHTML={{__html: rawHtml}}></div>
+            <div className="blog">
+                <section className="container">
+                    <h3 className="blog-title">{ blog.title }</h3>
+                    <div className="blog-info">
+                        <span className="avatar"></span>
+                        nemo . 
+                        <span className="blog-time">{ blog.time }</span>
+                    </div>
+                    <div className="blog-content" dangerouslySetInnerHTML={{__html: rawHtml}}></div>
+                </section>
+            </div>
         )
     }
 
     componentDidMount() {
-        const bid = encodeURIComponent(this.props.params.blogId);
+        const bid = window.location.pathname.substr(6);
         
-        fetch('/blog?bid=' + bid)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    content: data.content
-                })
-            })
+        this.props.get_blog_content(bid);
     }
 }
+
+export default connect(
+    state => ({
+        blog: state.blog || {}
+    }),
+    { get_blog_content }
+)(Blog)

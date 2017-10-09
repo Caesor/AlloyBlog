@@ -7,7 +7,7 @@ tags: algorithm
 ##介绍
 **最小化丑陋的函数式问题：**有一个在实数[-10,10]^10 十维空间的丑陋函数式，我们的目标是要找到它的最小值。换句话说，我们需要找到一个十维向量 x，可以让函数 f(x) 得到一个最小的可能结果。
 
-![picture1]({{site.blogimgurl}}/2014-12-22-01.png "uglyfunction")
+![picture1](http://localhost:3000/blog_img/2014-12-22-01.png "uglyfunction")
 
 今天，我们就是尝试使用多种方法解决 UglyFunction 问题。
 

@@ -44,7 +44,7 @@ tags: algorithm
 ##例子
 **例1:**
 
-![picture1]({{site.blogimgurl}}/2014-12-21-01.png "example1")
+![picture1](http://localhost:3000/blog_img/2014-12-21-01.png "example1")
 
 人口初始化均匀分布，人口之间微分信息差异很大；
 
@@ -64,7 +64,7 @@ g3 = (0.25, 0.4, 0.6)T
 
 F = 0.3 ←− strength parameter
 
-![picture1]({{site.blogimgurl}}/2014-12-21-02.png "example2")
+![picture1](http://localhost:3000/blog_img/2014-12-21-02.png "example2")
 
 ##DE Recombination
 

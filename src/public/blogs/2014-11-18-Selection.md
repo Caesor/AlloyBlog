@@ -8,7 +8,7 @@ tags: algorithm
 
 ##轮盘赌选择（Roulette Wheel Selection）
 
-![picture1]({{site.blogimgurl}}/2014-11-18-01.png "roulette wheel selection")
+![picture1](http://localhost:3000/blog_img/2014-11-18-01.png "roulette wheel selection")
 
 轮盘赌选择法可用如下过程来模拟实现：
 
@@ -18,11 +18,11 @@ tags: algorithm
 
 3、若 qk - 1 < r <= qk (2<=k<=N)，则染色体 xk 被选中，其中qi为染色体xi(i=1,2,...,n)的累积概率，计算公式为：
 
-![picture1]({{site.blogimgurl}}/2014-11-18-02.png "caculation")
+![picture1](http://localhost:3000/blog_img/2014-11-18-02.png "caculation")
 
 这里我们举一个简单的例子就可以明白累积概率的问题！
 
-![picture1]({{site.blogimgurl}}/2014-11-18-03.png "cumulative probability")
+![picture1](http://localhost:3000/blog_img/2014-11-18-03.png "cumulative probability")
 
 这样我们就可以将所有个体的获取概率均匀分布在[0,1]的范围内，通过生成一个［0，1］的随机数判断它在哪个区间而决定选择对象！
 

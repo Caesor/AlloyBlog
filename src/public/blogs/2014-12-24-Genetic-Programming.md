@@ -18,7 +18,7 @@ tags: algorithm
 
 找出函数表达式 ϕ : R → R
 
-![picture1]({{site.blogimgurl}}/2014-12-24-01.png "function")
+![picture1](http://localhost:3000/blog_img/2014-12-24-01.png "function")
 
 因此我们需要使用基因编程得到回归到符号表达式：
 
@@ -38,7 +38,7 @@ tags: algorithm
 
 我们需要找到的是一个有 F、T中元素所组成的一个符合数据的表达式
 
-![picture1]({{site.blogimgurl}}/2014-12-24-02.png "funcTree")
+![picture1](http://localhost:3000/blog_img/2014-12-24-02.png "funcTree")
 
 ##基因编程
 

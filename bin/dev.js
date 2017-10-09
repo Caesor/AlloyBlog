@@ -14,6 +14,10 @@ const projectRootPath = path.resolve(__dirname, '..'),
     log = console.log.bind(console, '>>> [DEV]:'.red),
     watcher = chokidar.watch(path.join(__dirname, '../src'));
 
+fsExtra.copy(path.resolve(srcPath, './view/libs'), path.resolve(appPath, './public'))
+    .then(() => console.log('public folder copy success!'))
+    .catch(err => console.error(err));
+
 fsExtra.copy(path.resolve(srcPath, './public'), path.resolve(appPath, './public'))
     .then(() => console.log('public folder copy success!'))
     .catch(err => console.error(err));

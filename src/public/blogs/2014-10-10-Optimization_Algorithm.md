@@ -33,7 +33,7 @@ tags: algorithm
 **Example:Traveling Salesman Problem**
 
 一个商人选择最短的距离访问 n 个城市。所有的城市只能访问一次并且最终要回到出发的城市。Traveling Salesman Problem(TSP)的目标是要找到一条访问了所有城市并且距离总和最短环路。
-![picture1]({{site.blogimgurl}}/2014-10-10-01.png "tsp")
+![picture1](http://localhost:3000/blog_img/2014-10-10-01.png "tsp")
 
 1.**问题空间（Problem Space）X**: 问题结果x的集合，x被称为备选结果
 
@@ -47,7 +47,7 @@ TSP的目标函数是：Minimize f (x) = dist( Hefei , x[0]) + Σ（i=0->2）dis
 
 3.**共通启发式演算法（Metaheuristics）**: 我们知道问题空间X的数据结构，那么我们可以随机创建一个实例x！然后修改已存在的实例x，或者合并存在的实例x1、x2。如果能够足够好的完成这个，我们就成功啦！
 
-![picture1]({{site.blogimgurl}}/2014-10-10-02.png "meta")
+![picture1](http://localhost:3000/blog_img/2014-10-10-02.png "meta")
 
 接下来我们就需要得到实例x了！还需要一个修改实例的方法！或者是一个合并实例的方法！
 
@@ -59,7 +59,7 @@ TSP的目标函数是：Minimize f (x) = dist( Hefei , x[0]) + Σ（i=0->2）dis
 
 但是如果有些问题的问题空间不是著名的数据结构应该怎么办呢？那我们转化它！比如：
 
-![picture1]({{site.blogimgurl}}/2014-10-10-03.png "meta")
+![picture1](http://localhost:3000/blog_img/2014-10-10-03.png "meta")
 
 我们把这个过程称为**基因-表现型映射（Genotype-Phenotype Mapping）**，Genotype-Phenotype Mapping（GPM）G → X将实际中的**搜索空间（Search Space）**G映射到了问题空间X中。
 

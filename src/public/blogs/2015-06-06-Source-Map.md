@@ -52,7 +52,7 @@ source Map 是一个信息文件，里面存储这位置信息。也就是说，
 
 同时你会发现在统计目录下看到main.css.map 文件，这样当你打开Chrome 调试器时就看在 style 选项卡中看到对应的样式已经对应到了原来的 LESS 文件上。
 
-![picture1]({{site.blogimgurl}}/2015-06-06-01.png "source map")
+![picture1](http://localhost:3000/blog_img/2015-06-06-01.png "source map")
 
 大功告成！
 

@@ -40,6 +40,6 @@ tags : javascript
 
 **另附：FileReader的方法和事件**
 
-![picture1]({{site.blogimgurl}}/2014-11-23-01.png "filereader")
+![picture1](http://localhost:3000/blog_img/2014-11-23-01.png "filereader")
 
 

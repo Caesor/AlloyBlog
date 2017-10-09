@@ -8,7 +8,7 @@ tags: algorithm
 
 交叉有单点交叉（Single－Point）、两点交叉（Two－Point）、多点交叉（Multi－Point）和组合交叉（Uniform）4种方式
 
-![picture1]({{site.blogimgurl}}/2014-11-20-01.png "example_pic")
+![picture1](http://localhost:3000/blog_img/2014-11-20-01.png "example_pic")
 
 ##单点交叉（Single－Point）
 

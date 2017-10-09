@@ -1,6 +1,6 @@
 ---
 layout: blog
-title: 使用 requestAnimationFrame 更好的实现你的js动画
+title: 使用 requestAnimationFrame 实现js动画
 categories: font-end
 tags: javascript requestAnimationFrame
 ---

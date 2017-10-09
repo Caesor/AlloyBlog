@@ -46,7 +46,7 @@ tags: algorithm
 
 6、在完成一次函数评估（适应性检测）后，检查终止条件决定是否停止迭代
 
-![picture1]({{site.blogimgurl}}/2014-11-02-01.png "EA")
+![picture1](http://localhost:3000/blog_img/2014-11-02-01.png "EA")
 
 	public EA() {
 	    super();
