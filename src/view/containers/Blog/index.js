@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import fetch from 'isomorphic-fetch'
 import showdown from 'showdown'
+import showdownHighlight from 'showdown-highlight'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -10,7 +11,9 @@ if(typeof window !== 'undefined'){
     require('./index.scss')
 }
 
-const converter = new showdown.Converter();
+const converter = new showdown.Converter({
+    extensions: [showdownHighlight]
+});
 
 class Blog extends Component {
     constructor() {
@@ -36,6 +39,7 @@ class Blog extends Component {
     }
 
     componentDidMount() {
+
         const bid = window.location.pathname.substr(6);
         
         this.props.get_blog_content(bid);

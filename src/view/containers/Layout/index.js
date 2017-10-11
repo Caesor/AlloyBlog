@@ -17,16 +17,16 @@ class Layout extends Component {
         return (
             <div className="layout">
                 <Header>
-                    <NavLink to="/">Nemo</NavLink>
+                    <NavLink to="/"><i className="logo"></i></NavLink>
                     <NavLink to="/archive">Blog</NavLink>
                     <NavLink to="/lab">H5 Lab</NavLink>
-                    <NavLink to="/about">About</NavLink>
+                    {/* <NavLink to="/about">About</NavLink> */}
                     <a href="https://github.com/caesor">Github</a>
                 </Header>
                 <Switch>
                     <Route exact path="/" component={Main} />
                     <Route path="/archive" component={Archive} />
-                    <Route path="/about" component={About} />
+                    {/* <Route path="/about" component={About} /> */}
                     <Route path="/blog/:blogId" component={Blog} />
                 </Switch>
             </div>

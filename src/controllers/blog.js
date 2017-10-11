@@ -6,7 +6,7 @@ export const get = async ctx => {
     const filepath = path.resolve(__dirname, '../public/blogs', filename);
     
     const linkReg = /(.+)\.md$/,
-        infoReg = /---([^]+)---\n([^]+)/m,
+        infoReg = /---([^]+)---[\r\n]([^]+)/m,
         timeReg = /(\d{4}-\d{2}-\d{2})/i,
         titleReg = /title\s*:\s*(.+)/i,
         categoryReg = /categories\s*:\s*(.+)/i,
@@ -17,7 +17,7 @@ export const get = async ctx => {
 
     if( file ) {
         const f = file.match(infoReg);
-        const info = f && f[1];
+        const info = (f && f[1]) || '';
         content = f && f[2];
         title = info.match(titleReg)[1];
         categories = info.match(categoryReg)[1];

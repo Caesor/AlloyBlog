@@ -42,9 +42,9 @@ favicon： koa-favicon
 
 ##二、配置文件
 项目基于模块和中间件的，无论是别人的中间件，还是自己编写的中间件，为了提高模块的可复用性，总是会为中间件提供一系列配置参数。在项目中为了方便统一管理中间件配置，我建议在configs文件夹中创建 `main.js` 存放所有的配置信息，单个复杂配置可单独保存文件在configs文件夹中，例如：
-```
-\\ main.js
 
+```javascript
+// main.js
 import path from 'path'
 
 const config = {

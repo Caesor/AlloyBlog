@@ -1,5 +1,5 @@
 html, body {
-    font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: -apple-system, "Open Sans", "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     height: 100%;
 }
 
@@ -11,5 +11,15 @@ html, body {
     height: 100%;
     .layout-body {
         width: 100%;
-    }   
+    }
+    .logo {
+        display: block;
+        width: 80px;
+        height: 80px;
+        background-image: url('./logo.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        top: 10px;
+    }
 }
