@@ -1,0 +1,24 @@
+@import './theme.scss';
+
+.editor {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    
+
+    .preview {
+        width: 50%;
+        margin-top: 50px;
+    }
+
+    .ReactCodeMirror {
+        width: 50%;
+        margin-top: 50px;
+        font-size: 16px;
+        line-height: 27px;
+        border-right: 2px dashed #c1c1c1;
+        padding-right: 20px;
+        padding-left: 30px;
+        box-sizing: border-box;
+    }
+}

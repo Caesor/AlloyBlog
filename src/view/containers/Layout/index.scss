@@ -21,5 +21,10 @@ html, body {
         background-size: contain;
         position: relative;
         top: 10px;
+        transition: all ease;
+
+        &.small {
+            transform: translate(0, -25px) scale(0.6);
+        }
     }
 }
