@@ -6,6 +6,7 @@ import Main from '../Main'
 import Archive from '../Archive'
 import Blog from '../Blog'
 import Editor from '../Editor'
+import Login from '../../components/Login'
 
 if(typeof window !== 'undefined'){
     require('./index.scss')
@@ -22,6 +23,7 @@ class Layout extends Component {
                     <NavLink to="/lab">H5 Lab</NavLink>
                     {/* <NavLink to="/about">About</NavLink> */}
                     <a href="https://github.com/caesor">Github</a>
+                    <Login style={{float: "right"}} />
                 </Header>
                 <Switch>
                     <Route exact path="/" component={Main} />

@@ -16,7 +16,7 @@ class Header extends Component {
                 <ul className="nav">
                 {
                     this.props.children.map((child, index) => (
-                        <li className="nav-item" key={index}>
+                        <li className="nav-item" style={child.props.style} key={index}>
                         { child }
                         </li>
                     ))
