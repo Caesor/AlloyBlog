@@ -18,7 +18,7 @@ class Editor extends Component {
     constructor() {
         super();
         this.state = {
-            text: "//Code"
+            text: "---\ntitle: xxxx\ncategories: font-end\ntags: react webpack ...\n---"
         }
     }
     render() {

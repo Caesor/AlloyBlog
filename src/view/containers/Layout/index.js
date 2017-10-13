@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, NavLink, withRouter, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, NavLink, Link, withRouter, Switch } from 'react-router-dom'
 import classNames from 'classnames'
-import Header from '../../components/Header'
 import Main from '../Main'
 import Archive from '../Archive'
 import Blog from '../Blog'
@@ -14,17 +13,25 @@ if(typeof window !== 'undefined'){
 
 class Layout extends Component {
     render() {
+        let isIndex = this.props.location.pathname === '/';
+        let c = classNames('header', {black: !isIndex });
         let logoClass = classNames('logo', {small: this.props.location.pathname === '/editor'})
         return (
             <div className="layout">
-                <Header>
-                    <NavLink to="/"><i className={logoClass}></i></NavLink>
-                    <NavLink to="/archive">Blog</NavLink>
-                    <NavLink to="/lab">H5 Lab</NavLink>
-                    {/* <NavLink to="/about">About</NavLink> */}
-                    <a href="https://github.com/caesor">Github</a>
-                    <Login style={{float: "right"}} />
-                </Header>
+                <div className={c}>
+                    <div className="nav">
+                        <NavLink className="nav-item" to="/"><i className={logoClass}></i></NavLink>
+                        <NavLink className="nav-item" to="/archive">Blog</NavLink>
+                        <NavLink className="nav-item" to="/lab">H5 Lab</NavLink>
+                        {/* <NavLink className="nav-item" to="/about">About</NavLink> */}
+                        <a href="https://github.com/caesor">Github</a>
+                    </div>
+                    <div className="publish-ctrl">
+                        <Link className="publish-ctrl-item" to="/editor"><i className="fa fa-file-text-o"></i>文件</Link>
+                        <span className="publish-ctrl-item"><i className="fa fa-share-square-o"></i>发布</span>
+                    </div>
+                    <Login className="login"/>
+                </div>
                 <Switch>
                     <Route exact path="/" component={Main} />
                     <Route path="/archive" component={Archive} />

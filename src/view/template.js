@@ -8,6 +8,7 @@ export function template(body, data){
 			</head>
 			<link rel="stylesheet" href="http://localhost:3000/css/normalize.css">
 			<link rel="stylesheet" href="http://localhost:3000/css/main.min.css">
+			<link rel="stylesheet" href="http://localhost:3000/css/font-awesome.min.css">
 			<link rel="stylesheet" href="http://localhost:3000/css/atom-one-dark.css">
 			<body>
 				<div id="app">${body}</div>

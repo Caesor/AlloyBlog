@@ -19,7 +19,6 @@ class Archive extends Component {
 
         return (
             <div className="archive">
-                <Link to="/editor"><i className="new_doc">新建文档</i></Link>
                 <h1 className="title">Archive</h1>
                 <ul className="bloglist">
                 {
