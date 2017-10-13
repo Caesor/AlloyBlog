@@ -40,16 +40,22 @@
             }
             p {
                 margin: 20px 0px;
-                line-height: 40px;
+                line-height: 30px;
 
                 img {
                     max-width: 460px;
                 }
             }
 
+            li {
+                list-style-type: disc;
+                margin-left: 20px;
+                line-height: 30px;
+            }
+
             code {
                 font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
-                font-size: 14px;
+                font-size: 12px;
                 white-space: pre-wrap;
             }
 
