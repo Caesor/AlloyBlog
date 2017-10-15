@@ -1,1 +1,3 @@
-export { archive } from './archive';
+export archive from './archive';
+export blog from './blog'
+export editor from './editor'

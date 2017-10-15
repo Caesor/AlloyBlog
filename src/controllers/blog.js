@@ -2,6 +2,7 @@ import fs from 'fs-extra'
 import path from 'path'
 
 export const get = async ctx => {
+    const { version } = ctx.query;
     const filename = ctx.params.bid;
     const filepath = path.resolve(__dirname, '../public/blogs', filename);
     
@@ -12,10 +13,26 @@ export const get = async ctx => {
         categoryReg = /categories\s*:\s*(.+)/i,
 		tagReg = /tags\s*:\s*(.+)/i;
 
-    let file = await fs.readFile(filepath, 'utf-8');
+    let file = '';
+    let result = '';
+    try{
+        file = await fs.readFile(filepath, 'utf-8');
+    }catch(e){
+        result = e.message;
+        console.log('file read error: ', e);
+    }
     let title, categories, tags, time, content;
 
     if( file ) {
+        if(version) {
+            ctx.body = {
+                retcode: 0,
+                result: {
+                    blog: file
+                }
+            }
+            return;
+        }
         const f = file.match(infoReg);
         const info = (f && f[1]) || '';
         content = f && f[2];
@@ -38,7 +55,8 @@ export const get = async ctx => {
        }
     }else {
         ctx.body = {
-            retcode: 2
+            retcode: 401,
+            result
         }
     }
 }

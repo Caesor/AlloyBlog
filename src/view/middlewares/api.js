@@ -22,9 +22,9 @@ export default store => next => action => {
         opt.headers = {
             'Content-Type': 'application/x-www-form-urlencoded'
         };
-        opt.body = getParamStr(opt.body);
+        opt.body = getParamStr(body);
     }else if(method === 'GET') {
-        url += '?' + getParamStr(opt.body);
+        url += '?' + getParamStr(body);
     }else {
 
     }

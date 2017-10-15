@@ -7,9 +7,15 @@ export default function finalHandler() {
         } catch (error) {
             ctx.status = error.status || 500;
             if (ctx.status === 404) {
-                // await ctx.render('404', { error });
-            } else {
-                // await ctx.render('error', { error });
+                ctx.body = {
+                    recode: 404,
+                    result: error
+                }
+            } else if(ctx.status === 500){
+                ctx.body = {
+                    recode: 500,
+                    result: error
+                }
             }
             ctx.app.emit('error', error, ctx);
         }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import fetch from 'isomorphic-fetch'
 import showdown from 'showdown'
 import showdownHighlight from 'showdown-highlight'
 import { Link } from 'react-router-dom'
@@ -22,6 +21,8 @@ class Blog extends Component {
 
     render() {
         const { blog } = this.props;
+        const { bid } = this.props.match.params;
+
         let rawHtml = converter.makeHtml(blog.content.toString());
         return (
             <div className="blog">
@@ -31,6 +32,10 @@ class Blog extends Component {
                         <span className="avatar"></span>
                         nemo . 
                         <span className="blog-time">{ blog.time }</span>
+                        <div className="ctrl">
+                            <Link className="ctrl-item" to={`/editor/${bid}/1`}><i className="fa fa-edit"></i>编辑</Link>    
+                            <span className="ctrl-item" onClick={ e => this.del() }><i className="fa fa-trash-o"></i>删除</span>
+                        </div>
                     </div>
                     <div className="blog-content" dangerouslySetInnerHTML={{__html: rawHtml}}></div>
                 </section>
@@ -40,9 +45,17 @@ class Blog extends Component {
 
     componentDidMount() {
 
-        const bid = window.location.pathname.substr(6);
+        const { bid } = this.props.match.params;
         
         this.props.get_blog_content(bid);
+    }
+
+    edit() {
+
+    }
+
+    del() {
+
     }
 }
 

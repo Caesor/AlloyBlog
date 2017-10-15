@@ -11,7 +11,7 @@ class Main extends Component {
                 <div className="slogon">
                     <h1>Hello</h1>
                     <h1>I am</h1>
-                    <h1>Nemo</h1>
+                    <h1>Caesor</h1>
                 </div>
             </div>
         )

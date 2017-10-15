@@ -27,6 +27,21 @@
                 vertical-align: middle;
                 margin-right: 10px;
             }
+
+            .ctrl {
+                display: inline-block;
+                margin-left: 80px;
+                .ctrl-item {
+                    display: inline-block;
+                    width: 80px;
+                    color: gray;
+                    cursor: pointer;
+
+                    .fa {
+                        margin-right: 5px;
+                    }
+                }
+            }
         }
 
         @at-root .blog-content {
@@ -68,6 +83,20 @@
                 word-wrap: break-word;
                 white-space: pre;
                 white-space: pre-wrap;
+            }
+
+            blockquote {
+                position: relative;
+                &:before {
+                    content: '"';
+                    font-family: cursive;
+                    font-size: 80px;
+                    color: #bdbcbc;
+                    display: inline-block;
+                    position: absolute;
+                    left: -45px;
+                    top: -20px;
+                }
             }
         }
     }

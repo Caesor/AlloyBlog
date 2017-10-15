@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 import api from './middlewares/api.js'
 
-import archive from './reducers/archive.js'
+import * as reducers from './reducers'
 import blog from './reducers/blog.js'
 
 let isBrowser = typeof window !== 'undefined';
@@ -13,8 +13,7 @@ if(isBrowser){
 }
 
 const reducer = combineReducers({
-    archive,
-    blog
+    ...reducers
 })
 
 const configureStore = preloadedState => createStore(

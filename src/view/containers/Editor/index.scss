@@ -13,6 +13,11 @@
         padding-left: 20px;
         box-sizing: border-box;
         overflow: scroll;
+
+        .blog-title {
+            font-size: 30px;
+            margin: 20px 0;        
+        }
     }
 
     .ReactCodeMirror {
@@ -26,6 +31,9 @@
         box-sizing: border-box;
         background-color: #f7f7f7;
 
+        .CodeMirror, .CodeMirror-scroll {
+            height: 100%;
+        }
         .CodeMirror-scroll {
             background-color: #f7f7f7;
         }
