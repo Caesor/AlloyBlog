@@ -17,7 +17,7 @@ router
     .set('/signup', signup)
     .get('/logout', logout.get)
 
-    .set('/blog/:bid', blog)
+    // .set('/blog/:bid', blog)
     .set('/user/:uid', user)
 
 export default router;

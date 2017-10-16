@@ -8,7 +8,7 @@ let initState ={
     time: ''
 }
 
-const blog = (state=initState, action) => {
+export const blog = (state=initState, action) => {
     switch(action.type) {
         case GET_BLOG_CONTENT_SUCC:
             return Object.assign({}, state, action.data.blog)
@@ -17,5 +17,3 @@ const blog = (state=initState, action) => {
     }
     return state;
 }
-
-export default blog;
