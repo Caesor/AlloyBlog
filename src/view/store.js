@@ -9,7 +9,7 @@ let isBrowser = typeof window !== 'undefined';
 let composeEnhancers = compose;
 
 if(isBrowser){
-    composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
+    composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 }
 
 const reducer = combineReducers({
